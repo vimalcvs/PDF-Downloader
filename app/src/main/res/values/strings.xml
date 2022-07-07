@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Bibliophile</string>
+    <string name="Book">Book</string>
+    <string name="download">Download</string>
+    <string name="cancel">Cancel</string>
+    <string name="_0">0%</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
+    <string name="similar_books">Similar books</string>
+    <string name="searchBooks">Search for books</string>
+    <string name="read">Read</string>
+    <string name="mybooks">My books</string>
+    <string name="my_books">My books</string>
+    <string name="about">About</string>
+    <string name="update">Update</string>
+    <string name="Description">Book downloader</string>
+</resources>

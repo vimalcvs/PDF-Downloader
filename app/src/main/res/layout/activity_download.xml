@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/searchToolbar"
+        android:layout_width="match_parent"
+        android:layout_height = "?attr/actionBarSize"
+        app:navigationIcon="?attr/homeAsUpIndicator"
+        android:background = "#2F0743">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:layout_width="@dimen/_220sdp"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/download"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:textSize="@dimen/_15sdp"
+                    android:layout_alignParentStart="true" />
+            </RelativeLayout>
+
+            <android.widget.SearchView
+                android:id="@+id/searchBook"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:iconifiedByDefault="true" />
+
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:layout_marginTop="?attr/actionBarSize"
+        android:id="@+id/shimmer_view_container_download"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include layout="@layout/download_shimmer" />
+        </LinearLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/download_scroll"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                card_view:cardElevation="@dimen/_5sdp"
+                card_view:cardCornerRadius="@dimen/_8sdp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/download_image"
+                    android:layout_width="@dimen/_150sdp"
+                    android:layout_height="@dimen/_200sdp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/share"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/share"
+                android:layout_marginTop="@dimen/_180sdp"
+                android:layout_marginLeft="@dimen/_275sdp"
+                android:layout_marginStart="@dimen/_275sdp" />
+
+            <TextView
+                android:id="@+id/download_title"
+                android:layout_width="@dimen/_120sdp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="4"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:layout_marginLeft="@dimen/_180sdp"
+                android:layout_marginStart="@dimen/_180sdp"
+                android:layout_marginTop="@dimen/_10sdp"/>
+            <TextView
+                android:id="@+id/percent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="11sp"
+                android:text="@string/_0"
+                android:visibility="invisible"
+                android:layout_marginLeft="@dimen/_180sdp"
+                android:layout_marginStart="@dimen/_180sdp"
+                android:layout_marginTop="@dimen/_158sdp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_180sdp"
+                android:layout_marginStart="@dimen/_180sdp"
+                android:layout_marginTop="@dimen/_60sdp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_230sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_10sdp"/>
+
+            <Button
+                android:id="@+id/downloadButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/download"
+                android:textSize="@dimen/_9sdp"
+                android:layout_marginLeft="@dimen/_180sdp"
+                android:layout_marginStart="@dimen/_180sdp"
+                android:layout_marginTop="@dimen/_170sdp" />
+
+            <Button
+                android:id="@+id/readButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/read"
+                android:textSize="@dimen/_9sdp"
+                android:layout_marginLeft="@dimen/_180sdp"
+                android:layout_marginStart="@dimen/_180sdp"
+                android:layout_marginTop="@dimen/_170sdp"
+                android:visibility="invisible"/>
+
+            <Button
+                android:id="@+id/cancelButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cancel"
+                android:textSize="@dimen/_9sdp"
+                android:layout_marginLeft="@dimen/_180sdp"
+                android:layout_marginStart="@dimen/_180sdp"
+                android:layout_marginTop="@dimen/_170sdp"
+                android:visibility="invisible"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="@string/similar_books"
+                android:textSize="28sp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_285sdp"/>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/similar_books"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_305sdp"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="2" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:progressTint="@color/purple"
+                android:progress="0"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="@dimen/_100sdp"
+                android:visibility="invisible"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_150sdp"
+                android:layout_marginLeft="@dimen/_180sdp"
+                android:layout_marginStart="@dimen/_180sdp"
+                tools:targetApi="lollipop" />
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</RelativeLayout>
